@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body id="body">
+    <div id="loading">
+        <img id="gta"  src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXU4dTg0cmMxZndzMTZ1M25wNDk4Y2lqanBkZGQzNmpsaG0xdHg2ZSZlcD12MV9naWZzX3NlYXJjaCZjdD1z/XaejLonqk19jDugJbq/200.gif" />
+    </div>
+ 
+    
+  
+
+    <div class="box" style="visibility: hidden;" id="box">
+        <div id="playlists" class="pp" style="display: none;">
+            <button id="Happy">Ridezzz - By Happy</button>
+            <button id="mgmt">MGMT - Little Dark Age - by Happy</button>
+            <button id="Github">View Code - Github</button>
+            <button id="close">Close</button>
+    
+        </div>
+        
+       
+        <nav id="nav" class="mov">
+            <div class="outer">
+        <div class="circle shine" id="circle">       
+        </div>
+        </div>
+        <div class="heading">
+     <h1 id="Baby">Baby Music</h1>
+     </div>
+     <div class="right-outer">
+        <div class="right-circle" id="shareBtn">       
+        </div>
+        </div>
+        
+
+     </nav>
+
+     <div class="music shine" id="mus" style="visibility: hidden;" >
+        <div id="playlist" class="p"  style="visibility: hidden;">
+            <button id="Billi">Little Dark Age - MGMT</button>
+            <button id="Arijit">Limbo - Freddie Dredd</button>
+            <button id="Ruth">Lay All Your Love On Me - ABBA</button>
+            <button id="worth">Worth Nothing = Twisted</button>
+            <button id="eye">Jealous - Eyedress</button>
+            <button id="money">Money Rain - Vtornik</button>
+            <button id="run">Nowhere to Run - Stegosaurus Rex</button>
+            <button id="ene">Enemy - Imagine Dragons</button>
+            <button id="duet">Cigarette Duet - Princess Chelsea</button>
+            <button id="waka">Waka Waka - Shakira</button>
+            <button id="one">Heathens - Twenty one Pilots</button>
+            <button id="juttni">juttni - Billy X</button>
+            <button id="space" style="visibility: hidden; height: 17px;">Haryana Hood - Irshad Khan</button>
+        </div>
+        
+   
+     </div>
+     <div id="hide">
+     <h2 id="name">Little Dark Age</h2>
+     <p id="artist">MGMT</p>
+     </div>
+     <input id="progress" type="range" value="0">  
+    <audio  id="myAudio">
+    <source src="Music/Music.mp3" type="audio/mp3">
+  </audio>
+     <div class="control" style="visibility: hidden;" id="control">
+     <button id="btn1"  style="font-size: 10px;" class="fa-solid fa-angle-left" onclick="prv()"></button>
+    
+     <button id="btn2"  onclick="playAudio()" class="fa-solid fa-play"></button>
+    
+     <button id="btn3"  style="font-size: 10px;" class="fa-solid fa-angle-right" onclick="tests()"></button>
+    
+    </div>
+
+    </div>
+   
+   
+   <script>
+        
+window.onload = () => kill();
+
+
+
+function kill(){
+
+    document.getElementById("mus").classList.remove("shine");
+    document.getElementById("circle").classList.remove("shine");
+}
+
+document.getElementById("circle").onclick = () => window.location.href="https://github.com/babyo7/Music-Player";
+      
+        var cnt = 0;
+        var nxt = 0;
+
+        var prev = 0;
+        
+
+        var t =  document.getElementById("test");
+       
+        var x = document.getElementById("myAudio"); 
+        var y = document.getElementById("btn2");
+        var z =  document.getElementById("progress");
+        var m =  document.getElementById("mus");
+        var ns = document.getElementById("btn3");
+
+        var n =  document.getElementById("name");
+        var a =  document.getElementById("artist");
+        var p=  document.getElementById("playlist");
+        var pp=  document.getElementById("playlists");
+        var billi=  document.getElementById("Billi");
+        var arijit=  document.getElementById("Arijit");
+        var ruth=  document.getElementById("Ruth");
+        var baby=  document.getElementById("Baby");
+        var hide=  document.getElementById("hide");
+        var happy=  document.getElementById("Happy");
+        var github=  document.getElementById("Github");
+        var worthe=  document.getElementById("worth");
+        var eyee=  document.getElementById("eye");
+        var moneye=  document.getElementById("money");
+        var rune=  document.getElementById("run");
+        var enee=  document.getElementById("ene");
+        var duete=  document.getElementById("duet");
+        var wakae=  document.getElementById("waka");
+        var onee=  document.getElementById("one");
+       
+        var  juttnie=  document.getElementById("juttni");
+
+
+
+
+        github.onclick = () => window.location.href="https://github.com/babyo7";
+        var mobile = window.matchMedia("(max-width: 800px)")
+myFunction(mobile) // Call listener function at run time
+mobile.addListener(myFunction) // Attach listener function on state changes 
+
+
+happy.onclick = ()=> window.location.href="https://happy-music.vercel.app";
+
+        const myTimeout = setTimeout(wassup, 1100);
+        const time = setTimeout(shows, 1100);
+       
+        function wassup() {
+    document.getElementById("loading").style.display="none";
+    document.getElementById("box").style.visibility="visible";
+    document.getElementById("mus").style.visibility="visible";
+    document.getElementById("control").style.visibility="visible";
+    
+
+}
+
+
+        users=0;
+        baby.onclick = ()=>{
+            users++;
+            user();
+            console.log(users);
+        }
+
+        function user(){
+
+switch(users){
+
+        case 1:
+        pp.classList.remove("downs");
+       pp.classList.add("slide");
+       pp.style.display="block";
+     
+       
+       document.getElementById("nav").classList.remove("mov");
+       document.getElementById("nav").classList.add("slide");
+       
+       document.getElementById("nav").style.marginBottom="-1400px";
+       
+    
+
+  
+    a.style.visibility="hidden";
+    n.style.visibility="hidden";
+    z.style.visibility="hidden";
+    break;
+default:
+    users=0;
+
+}
+        }
+
+document.getElementById("close").onclick =()=> {show(); }
+
+function show() {
+    if( /android|iphone/i.test(navigator.userAgent)){
+        myFunction(mobile);
+    }
+    else{
+
+    pp.classList.remove("slide");
+    pp.classList.add("downs");
+    document.getElementById("nav").style.marginBottom="";
+    document.getElementById("nav").style.marginTop="-1300px";
+
+    document.getElementById("mus").style.visibility="visible";
+    document.getElementById("control").style.visibility="visible";
+    document.getElementById("nav").style.visibility="visible";
+    a.style.visibility="visible";
+    n.style.visibility="visible";
+    z.style.visibility="visible";
+
+
+    setTimeout(shows, 1600);
+    }
+
+}
+       
+function shows(){
+    document.getElementById("nav").style.marginBottom="";
+    document.getElementById("nav").style.marginTop="";
+pp.style.display="none";
+    users=0;
+   
+      
+}
+
+
+function myFunction(mobile) {
+
+pp.classList.remove("slide");
+pp.classList.add("downs");
+document.getElementById("nav").style.marginBottom="";
+document.getElementById("nav").style.marginTop="-1190px";
+
+document.getElementById("mus").style.visibility="visible";
+document.getElementById("control").style.visibility="visible";
+document.getElementById("nav").style.visibility="visible";
+a.style.visibility="visible";
+n.style.visibility="visible";
+z.style.visibility="visible";
+
+
+setTimeout(shows, 1900);
+
+}
+
+
+
+
+
+
+function tests(){
+    nxt++;
+    songs();
+    
+console.log(nxt);
+    
+
+}
+
+function  prv(){
+    nxt--;
+    songs();
+    
+console.log(nxt);
+
+
+}
+
+
+
+function songs(){
+
+
+switch(nxt)
+{
+
+
+    case 1:
+
+    x.setAttribute('src','Music/Music1.mp3');
+    x.play();
+                y.className="fa-solid fa-pause";
+            m.style.backgroundImage = "url(Cover/1.jpg)";
+            n.innerText="Limbo";
+            a.innerText="Freddie Dredd";
+            document.title="Limbo - Freddie Dredd";
+
+    
+        break;
+
+        case 2:
+        x.setAttribute('src','Music/Music2.mp3');
+           x.play();
+           y.className="fa-solid fa-pause";
+            m.style.backgroundImage = "url(Cover/2.jpg)";
+            n.innerText="Lay All Your Love On Me";
+            a.innerText="ABBA";
+            document.title="Lay All Your Love On Me - ABBA";
+        
+            break;
+
+
+            case 3:
+            x.setAttribute('src','Music/Music3.mp3');
+           x.play();
+           y.className="fa-solid fa-pause";
+            m.style.backgroundImage = "url(Cover/3.jpg)";
+            n.innerText="Worth Nothing";
+            a.innerText="Twisted";
+            document.title="Worth Nothing - Twisted";
+                break;
+                
+                case 4:
+                x.setAttribute('src','Music/Music4.mp3');
+           x.play();
+           y.className="fa-solid fa-pause";
+            m.style.backgroundImage = "url(Cover/4.jpg)";
+            n.innerText="Jealous";
+            a.innerText="Eyedress";
+            document.title="Jealous - Eyedress";
+                    break;
+
+                    case 5:
+                    x.setAttribute('src','Music/Music5.mp3');
+           x.play();
+           y.className="fa-solid fa-pause";
+            m.style.backgroundImage = "url(Cover/5.jpg)";
+            n.innerText="Money Rain";
+            a.innerText="Vtornik";
+            document.title="Money Rain - Vtornik";
+                        break;
+
+                        case 6:
+                        x.setAttribute('src','Music/Music6.mp3');
+           x.play();
+           y.className="fa-solid fa-pause";
+            m.style.backgroundImage = "url(Cover/6.jpg)";
+            n.innerText="Nowhere to Run ";
+            a.innerText="Stegosaurus Rex";
+            document.title="Nowhere to Run - Stegosaurus Rex";
+                            break;
+
+                            case 7:
+                            x.setAttribute('src','Music/Music7.mp3');
+           x.play();
+           y.className="fa-solid fa-pause";
+            m.style.backgroundImage = "url(Cover/7.jpg)";
+            n.innerText="Enemy";
+            a.innerText="Imagine Dragons";
+            document.title="Enemy - Imagine Dragons";
+                                break;
+
+                               case 8:
+                               x.setAttribute('src','Music/Music8.mp3');
+           x.play();
+           y.className="fa-solid fa-pause";
+            m.style.backgroundImage = "url(Cover/8.jpg)";
+            n.innerText="Cigarette Duet";
+            a.innerText="Princess Chelsea";
+            document.title="Cigarette Duet - Princess Chelsea";
+                                 break;
+
+                                 case 9:
+                                 x.setAttribute('src','Music/Music9.mp3');
+           x.play();
+           y.className="fa-solid fa-pause";
+            m.style.backgroundImage = "url(Cover/9.jpg)";
+            n.innerText="Waka Waka";
+            a.innerText="Shakira";
+            document.title="Waka Waka - Shakira";
+                                    break;
+
+                                    case 10:
+                                    x.setAttribute('src','Music/Music10.mp3');
+           x.play();
+           y.className="fa-solid fa-pause";
+            m.style.backgroundImage = "url(Cover/10.jpg)";
+            n.innerText="Heathens ";
+            a.innerText="Twenty one Pilots";
+            document.title="Heathens - Twenty one Pilots";
+                                        break;
+
+                                        case 11:
+                                        x.setAttribute('src','Music/Music11.mp3');
+           x.play();
+           y.className="fa-solid fa-pause";
+            m.style.backgroundImage = "url(Cover/11.jpg)";
+            n.innerText="juttni ";
+            a.innerText="Billy X";
+            document.title="juttni - Billy X";
+                                            break;
+
+            
+            default:    
+            x.setAttribute('src','Music/Music.mp3');
+           x.play();
+           y.className="fa-solid fa-pause";
+            m.style.backgroundImage = "url(Cover/0.jpg)";
+            n.innerText="Little Dark Ager";
+            a.innerText="MGMT";
+           nxt=0;
+           document.title="Little Dark Age - MGMT";
+               
+
+                
+}
+}
+
+
+function playAudio(){
+    cnt++;
+playaudio();
+console.log(cnt);
+}
+
+
+
+        function playaudio() { 
+
+
+            switch(cnt){
+
+            case 1:
+          
+            x.play(); 
+            y.className="fa-solid fa-pause";
+            break;
+
+            default:
+                cnt=0;
+            x.pause();
+            
+            y.className="fa-solid fa-play";
+
+
+          
+            }
+            
+           
+        }
+        
+        function sec() {
+            x.currentTime -= 30
+        }
+
+        function secd() {
+            x.currentTime += 30
+        }
+
+       
+
+z.max  = x.duration;        // Set max value when you know the duration
+x.onloadedmetadata = () => z.max = x.duration;
+// update audio position
+x.onchange = () => z.currentTime = x.value;
+// update range input when currentTime updates
+x.ontimeupdate = () => z.value = x.currentTime;
+
+m.onclick =() => rste();
+hide.onclick =() => rst();
+
+function rst(){
+    p.classList.remove("slide");
+    p.classList.add("down");
+    
+}
+
+function rste(){
+    
+    p.style.visibility="visible";
+    p.classList.remove("down");
+    p.classList.add("slide");
+}
+
+
+function hiddee(){
+
+    p.style.visibility="none";
+}
+
+z.onchange = () => x.currentTime = z.value;
+x.onended = () => ns.click();
+x.onpause = () =>   y.className="fa-solid fa-play";
+x.onplay= () =>   y.className="fa-solid fa-pause";
+
+
+
+
+
+billi.onclick = () =>  {nxt=0; 
+songs();} 
+arijit.onclick = () => {nxt=1; 
+songs();} 
+ruth.onclick = () => {
+
+    nxt=2;
+    songs();
+}
+
+worthe.onclick = () => {
+
+    nxt=3;
+    songs();
+}
+
+       eyee.onclick = () => {
+
+    nxt=4;
+    songs();
+}
+
+       moneye.onclick = () => {
+
+    nxt=5;
+    songs();
+}
+
+       rune.onclick = () => {
+
+    nxt=6;
+    songs();
+}
+
+        enee.onclick = () => {
+
+    nxt=7;
+    songs();
+}
+
+        duete.onclick = () => {
+
+    nxt=8;
+    songs();
+}
+
+       wakae.onclick = () => {
+
+    nxt=9;
+    songs();
+}
+
+         onee.onclick = () => {
+
+    nxt=10;
+    songs();
+}
+
+juttnie.onclick = () => {
+
+nxt=11;
+songs();
+}
+
+
+
+        
+
+
+const shareBtn = document.getElementById('shareBtn')
+
+shareBtn.addEventListener('click', event => {
+
+  // Check for Web Share api support
+  if (navigator.share) {
+    // Browser supports native share api
+    navigator.share({
+      title: ' ',
+      url: 'https://music-player-sable-sigma.vercel.app'
+    }).then(() => {
+      console.log('Thanks for sharing!');
+    })
+      .catch((err) => console.error(err));
+  } else {
+    // Fallback
+    alert("The current browser does not support the share function. Please, manually share the link")
+  }
+});
+
+
+    </script>
+
+</body>
+</html>
