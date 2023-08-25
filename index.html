@@ -18,6 +18,7 @@
 
     <div class="box" style="visibility: hidden;" id="box">
         <div id="playlists" class="pp" style="display: none;">
+            <button id="babez">Baby Music - By Baby</button>
             <button id="Happy">Ridezzz - By Happy</button>
             <button id="mgmt">MGMT - Little Dark Age - by Happy</button>
             <button id="Github">View Code - Github</button>
@@ -109,6 +110,7 @@ document.getElementById("circle").onclick = () => window.location.href="https://
         var m =  document.getElementById("mus");
         var ns = document.getElementById("btn3");
         var mgmt = document.getElementById("mgmt");
+        var babezz = document.getElementById("babez");
 
         var n =  document.getElementById("name");
         var a =  document.getElementById("artist");
@@ -134,7 +136,7 @@ document.getElementById("circle").onclick = () => window.location.href="https://
 
 
         mgmt.onclick =() => window.open("https://mgmt-by-happy.vercel.app");
-      
+        babezz.onclick =() => window.open("https://vercel.com/babyo7/music-player");
 
         github.onclick = () =>  window.open("https://github.com/babyo7/mgmt-by-happy");
         var mobile = window.matchMedia("(max-width: 800px)")
